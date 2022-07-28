@@ -19,8 +19,8 @@
 //TODO: make it so when the item is created it is given the value of the user holding it
 var arrayOfItems = [
   {
-    id: "giraffe",
-    name: "Wooden Giraffe",
+    id: "decree",
+    name: "Message from Anglemount",
     originalOwner: username,
     currentOwner: username,
     playerAdditions: [],
