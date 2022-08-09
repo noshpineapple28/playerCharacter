@@ -17,28 +17,28 @@
  * and then a new object is added to the array of items
  */
 //TODO: make it so when the item is created it is given the value of the user holding it
-var arrayOfItems = [
-  {
-    id: "decree",
-    name: "Message from Anglemount",
-    originalOwner: username,
-    currentOwner: username,
-    playerAdditions: [],
-  },
-  {
-    id: "sending stone",
-    name: "Sending Stone",
-    originalOwner: username,
-    currentOwner: username,
-    playerAdditions: [],
-    chatLog: [],
-  },
-];
+var arrayOfItems = [];
 
 function createInventroy() {
   var inventory = (s) => {
     let dmns = layouts.inventory; //holds deminsions (dmns) set in main.js
     let clicked = false; //holds if mouse was clicked
+    arrayOfItems.push(
+      {
+        id: "decree",
+        name: "Message from Anglemount",
+        originalOwner: username,
+        currentOwner: username,
+        playerAdditions: [],
+      },
+      {
+        id: "sending stone",
+        name: "Sending Stone",
+        originalOwner: username,
+        currentOwner: username,
+        playerAdditions: [],
+        chatLog: [],
+      },)
 
     s.setup = () => {
       s.cnv = s.createCanvas(dmns.width, dmns.height);

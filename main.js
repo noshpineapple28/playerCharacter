@@ -144,6 +144,116 @@ var items = {
       s.model(items.journal.model);
     },
   },
+  brokeSword: {
+    name: "Broken Sword",
+    thumbnail: "./media/sword/swordThumb.png",
+    model: "./media/sword/sword.obj",
+    texture: "./media/sword/swordBroken.png",
+    notes: "./media/sword/swordBroken.txt",
+    display: (s) => {
+      s.texture(items.brokeSword.texture);
+      s.ambientLight(200);
+      s.noStroke();
+      s.directionalLight(150, 100, 100, -100, -100, -100);
+      s.model(items.brokeSword.model);
+    },
+  },
+  decreeCOR: {
+    name: "Message from Corendeck",
+    thumbnail: "./media/contracts/corendeck/noteThumb.png",
+    model: "./media/contracts/note.stl",
+    texture: "./media/messages/note.png",
+    notes: "./media/contracts/corendeck/note.txt",
+    display: (s) => {
+      s.ambientLight(200);
+      s.ambientMaterial(107, 200, 151);
+      s.textureMode(s.NORMAL)
+      s.noStroke();
+      s.directionalLight(150, 100, 100, -100, -100, -100);
+      s.texture(items.decreeCOR.texture);
+      s.model(items.decreeCOR.model);
+    },
+  },
+  decreeDRE: {
+    name: "Message from Dreven",
+    thumbnail: "./media/contracts/dreven/noteThumb.png",
+    model: "./media/contracts/note.stl",
+    texture: "./media/messages/note.png",
+    notes: "./media/contracts/dreven/note.txt",
+    display: (s) => {
+      s.ambientLight(200);
+      s.ambientMaterial(215, 100, 180);
+      s.textureMode(s.NORMAL)
+      s.noStroke();
+      s.directionalLight(150, 100, 100, -100, -100, -100);
+      s.texture(items.decreeDRE.texture);
+      s.model(items.decreeDRE.model);
+    },
+  },
+  decreeHAL: {
+    name: "Message from Hailsport",
+    thumbnail: "./media/contracts/hailsport/noteThumb.png",
+    model: "./media/contracts/note.stl",
+    texture: "./media/messages/note.png",
+    notes: "./media/contracts/hailsport/note.txt",
+    display: (s) => {
+      s.ambientLight(200);
+      s.ambientMaterial(140, 105, 201);
+      s.textureMode(s.NORMAL)
+      s.noStroke();
+      s.directionalLight(150, 100, 100, -100, -100, -100);
+      s.texture(items.decreeHAL.texture);
+      s.model(items.decreeHAL.model);
+    },
+  },
+  decreeREG: {
+    name: "Message from Regendale",
+    thumbnail: "./media/contracts/regendale/noteThumb.png",
+    model: "./media/contracts/note.stl",
+    texture: "./media/messages/note.png",
+    notes: "./media/contracts/regendale/note.txt",
+    display: (s) => {
+      s.ambientLight(200);
+      s.ambientMaterial(230, 105, 101);
+      s.textureMode(s.NORMAL)
+      s.noStroke();
+      s.directionalLight(150, 100, 100, -100, -100, -100);
+      s.texture(items.decreeREG.texture);
+      s.model(items.decreeREG.model);
+    },
+  },
+  brokenVial: {
+    name: "Broken Vial",
+    thumbnail: "./media/brokenVial/vialThumb.png",
+    model: "./media/brokenVial/vial.obj",
+    texture: "./media/brokenVial/vial.png",
+    notes: "./media/brokenVial/vial.txt",
+    display: (s) => {
+      s.texture(items.brokenVial.texture);
+      s.noStroke();
+      s.directionalLight(150, 100, 100, -100, -100, -100);
+      s.ambientLight(100);
+      s.model(items.brokenVial.model);
+    },
+  },
+  brokenEar: {
+    name: "Dead Ear",
+    thumbnail: "./media/ear/earThumb.png",
+    model: "./media/ear/ear.obj",
+    texture: "./media/brokenEar/ear.png",
+    notes: "./media/brokenEar/ear.txt",
+    display: (s) => {
+      s.texture(items.brokenEar.texture);
+      s.noStroke();
+      s.directionalLight(150, 100, 100, -100, -100, -100);
+      s.ambientLight(200);
+      s.push();
+      s.rotateY(150);
+      s.rotateZ(180);
+      s.model(items.brokenEar.model);
+      s.pop();
+    },
+  },
 };
 var ui = [];
 
@@ -171,7 +281,7 @@ var layout = (s) => {
     items.decree.model = s.loadModel(items.decree.model, true);
     items.decree.texture = s.loadImage(items.decree.texture);
     items.decree.notes = s.loadStrings(items.decree.notes);
-    //crest of anglemount
+    //crest of regendale
     items.regendaleCrest.thumbnail = s.loadImage(items.regendaleCrest.thumbnail);
     thumbnails.push(items.regendaleCrest.thumbnail);
     items.regendaleCrest.model = s.loadModel(items.regendaleCrest.model, true);
@@ -201,6 +311,48 @@ var layout = (s) => {
     items.journal.model = s.loadModel(items.journal.model, true);
     items.journal.texture = s.loadImage(items.journal.texture);
     items.journal.notes = s.loadStrings(items.journal.notes);
+    //broken swords
+    items.brokeSword.thumbnail = s.loadImage(items.brokeSword.thumbnail);
+    thumbnails.push(items.brokeSword.thumbnail);
+    items.brokeSword.model = s.loadModel(items.brokeSword.model, true);
+    items.brokeSword.texture = s.loadImage(items.brokeSword.texture);
+    items.brokeSword.notes = s.loadStrings(items.brokeSword.notes);
+    //Corendeck note
+    items.decreeCOR.thumbnail = s.loadImage(items.decreeCOR.thumbnail);
+    thumbnails.push(items.decreeCOR.thumbnail);
+    items.decreeCOR.model = s.loadModel(items.decreeCOR.model, true);
+    items.decreeCOR.texture = s.loadImage(items.decreeCOR.texture);
+    items.decreeCOR.notes = s.loadStrings(items.decreeCOR.notes);
+    //Dreven note
+    items.decreeDRE.thumbnail = s.loadImage(items.decreeDRE.thumbnail);
+    thumbnails.push(items.decreeDRE.thumbnail);
+    items.decreeDRE.model = s.loadModel(items.decreeDRE.model, true);
+    items.decreeDRE.texture = s.loadImage(items.decreeDRE.texture);
+    items.decreeDRE.notes = s.loadStrings(items.decreeDRE.notes);
+    //Hailsport note
+    items.decreeHAL.thumbnail = s.loadImage(items.decreeHAL.thumbnail);
+    thumbnails.push(items.decreeHAL.thumbnail);
+    items.decreeHAL.model = s.loadModel(items.decreeHAL.model, true);
+    items.decreeHAL.texture = s.loadImage(items.decreeHAL.texture);
+    items.decreeHAL.notes = s.loadStrings(items.decreeHAL.notes);
+    //Regendale note
+    items.decreeREG.thumbnail = s.loadImage(items.decreeREG.thumbnail);
+    thumbnails.push(items.decreeREG.thumbnail);
+    items.decreeREG.model = s.loadModel(items.decreeREG.model, true);
+    items.decreeREG.texture = s.loadImage(items.decreeREG.texture);
+    items.decreeREG.notes = s.loadStrings(items.decreeREG.notes);
+    //broken vial
+    items.brokenVial.thumbnail = s.loadImage(items.brokenVial.thumbnail);
+    thumbnails.push(items.brokenVial.thumbnail);
+    items.brokenVial.model = s.loadModel(items.brokenVial.model, true);
+    items.brokenVial.texture = s.loadImage(items.brokenVial.texture);
+    items.brokenVial.notes = s.loadStrings(items.brokenVial.notes);
+    //broken ear
+    items.brokenEar.thumbnail = s.loadImage(items.brokenEar.thumbnail);
+    thumbnails.push(items.brokenEar.thumbnail);
+    items.brokenEar.model = s.loadModel(items.brokenEar.model, true);
+    items.brokenEar.texture = s.loadImage(items.brokenEar.texture);
+    items.brokenEar.notes = s.loadStrings(items.brokenEar.notes);
     //UI elements
     ui.push(s.loadImage("./media/ui/inventory.png"));
     ui.push(s.loadImage("./media/ui/notes.png"));
