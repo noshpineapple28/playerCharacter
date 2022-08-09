@@ -17,7 +17,7 @@ const layouts = {
 };
 var items = {
   giraffe: {
-    name: "Wooden Giraffe",
+    name: "Crest of Dreven",
     thumbnail: "./media/woodenGiraffe/giraffe.png",
     model: "./media/woodenGiraffe/giraffe.stl",
     notes: "./media/woodenGiraffe/giraffe.txt",
@@ -56,11 +56,92 @@ var items = {
     notes: "./media/messages/note.txt",
     display: (s) => {
       s.ambientLight(200);
+      s.ambientMaterial(207, 185, 151);
       s.textureMode(s.NORMAL)
       s.noStroke();
       s.directionalLight(150, 100, 100, -100, -100, -100);
       s.texture(items.decree.texture);
       s.model(items.decree.model);
+    },
+  },
+  regendaleCrest: {
+    name: "Crest of Regendale",
+    thumbnail: "./media/sword/swordThumb.png",
+    model: "./media/sword/sword.obj",
+    texture: "./media/sword/sword.png",
+    notes: "./media/sword/sword.txt",
+    display: (s) => {
+      s.texture(items.regendaleCrest.texture);
+      s.ambientLight(200);
+      s.noStroke();
+      s.directionalLight(150, 100, 100, -100, -100, -100);
+      s.model(items.regendaleCrest.model);
+    },
+  },
+  vial: {
+    name: "Crest of Hailsport",
+    thumbnail: "./media/vial/vialThumb.png",
+    model: "./media/vial/vial.obj",
+    model2: "./media/vial/liquid.obj",
+    texture: "./media/vial/vial.png",
+    notes: "./media/vial/vial.txt",
+    display: (s) => {
+      s.texture(items.vial.texture);
+      s.noStroke();
+      s.directionalLight(150, 100, 100, -100, -100, -100);
+      s.ambientLight(100);
+      s.push();
+      s.scale(0.5);
+      s.translate(0, -110, 0)
+      s.model(items.vial.model2);
+      s.pop();
+      s.model(items.vial.model);
+    },
+  },
+  ear: {
+    name: "Crest of Corendeck",
+    thumbnail: "./media/ear/earThumb.png",
+    model: "./media/ear/ear.obj",
+    texture: "./media/ear/ear.png",
+    notes: "./media/ear/ear.txt",
+    display: (s) => {
+      s.texture(items.ear.texture);
+      s.noStroke();
+      s.directionalLight(150, 100, 100, -100, -100, -100);
+      s.ambientLight(200);
+      s.push();
+      s.rotateY(150);
+      s.rotateZ(180);
+      s.model(items.ear.model);
+      s.pop();
+    },
+  },
+  obelisk: {
+    name: "Crest of Anglemount",
+    thumbnail: "./media/obelisk/obeliskThumb.png",
+    model: "./media/obelisk/obelisk.obj",
+    notes: "./media/obelisk/obelisk.txt",
+    display: (s) => {
+      s.specularMaterial(40);
+      s.shininess(.5)
+      s.ambientLight(100);
+      s.noStroke();
+      s.directionalLight(150, 100, 100, -100, -100, -100);
+      s.model(items.obelisk.model);
+    },
+  },
+  journal: {
+    name: "Old Journal",
+    thumbnail: "./media/journal/journalThumb.png",
+    model: "./media/journal/journal.obj",
+    texture: "./media/journal/journal.png",
+    notes: "./media/journal/journal.txt",
+    display: (s) => {
+      s.texture(items.journal.texture);
+      s.ambientLight(200);
+      s.noStroke();
+      s.directionalLight(150, 100, 100, -100, -100, -100);
+      s.model(items.journal.model);
     },
   },
 };
@@ -90,6 +171,36 @@ var layout = (s) => {
     items.decree.model = s.loadModel(items.decree.model, true);
     items.decree.texture = s.loadImage(items.decree.texture);
     items.decree.notes = s.loadStrings(items.decree.notes);
+    //crest of anglemount
+    items.regendaleCrest.thumbnail = s.loadImage(items.regendaleCrest.thumbnail);
+    thumbnails.push(items.regendaleCrest.thumbnail);
+    items.regendaleCrest.model = s.loadModel(items.regendaleCrest.model, true);
+    items.regendaleCrest.texture = s.loadImage(items.regendaleCrest.texture);
+    items.regendaleCrest.notes = s.loadStrings(items.regendaleCrest.notes);
+    //crest of hailsport
+    items.vial.thumbnail = s.loadImage(items.vial.thumbnail);
+    thumbnails.push(items.vial.thumbnail);
+    items.vial.model = s.loadModel(items.vial.model, true);
+    items.vial.model2 = s.loadModel(items.vial.model2, true);
+    items.vial.texture = s.loadImage(items.vial.texture);
+    items.vial.notes = s.loadStrings(items.vial.notes);
+    //crest of corendeck
+    items.ear.thumbnail = s.loadImage(items.ear.thumbnail);
+    thumbnails.push(items.ear.thumbnail);
+    items.ear.model = s.loadModel(items.ear.model, true);
+    items.ear.texture = s.loadImage(items.ear.texture);
+    items.ear.notes = s.loadStrings(items.ear.notes);
+    //crest of anglemount
+    items.obelisk.thumbnail = s.loadImage(items.obelisk.thumbnail);
+    thumbnails.push(items.obelisk.thumbnail);
+    items.obelisk.model = s.loadModel(items.obelisk.model, true);
+    items.obelisk.notes = s.loadStrings(items.obelisk.notes);
+    //old journal
+    items.journal.thumbnail = s.loadImage(items.journal.thumbnail);
+    thumbnails.push(items.journal.thumbnail);
+    items.journal.model = s.loadModel(items.journal.model, true);
+    items.journal.texture = s.loadImage(items.journal.texture);
+    items.journal.notes = s.loadStrings(items.journal.notes);
     //UI elements
     ui.push(s.loadImage("./media/ui/inventory.png"));
     ui.push(s.loadImage("./media/ui/notes.png"));

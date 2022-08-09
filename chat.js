@@ -74,6 +74,10 @@ function createChat() {
           clicked = false;
           typing = false;
           selectRecipient = true;
+        }  else if (selectRecipient && clicked) {
+          clicked = false;
+          selectRecipient = false;
+          recipient = member;
         }
         //else, choose recipient
       } else {
@@ -184,6 +188,9 @@ function createChat() {
       ) {
         typing = true;
         selectRecipient = false;
+        clicked = false;
+      } else if (typing && clicked) {
+        typing = false;
         clicked = false;
       }
 

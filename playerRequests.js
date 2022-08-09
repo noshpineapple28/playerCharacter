@@ -66,6 +66,7 @@ socket.on("connect", () => {
     //delete item
     shareRequestSent = false;
     arrayOfItems.splice(deleteIndex, 1);
+    clearTimeout(endRequest);
   });
 
   //add a shared item on allowance of a share request

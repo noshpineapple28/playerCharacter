@@ -9,6 +9,7 @@ var displayText;
 var startText = 0; //index to start displaying the text at
 var noteLength;
 let shareRequestSent = false;
+var endRequest; //used to turn off the auto off for share requests
 
 function createNotes() {
   var notes = (s) => {
@@ -547,6 +548,7 @@ function createNotes() {
               arrayOfItems[displayText],
               recipient,
             ]); //request a share between players
+            endRequest = setTimeout(() => shareRequestSent = false, 20000);
           }
         } else {
           s.stroke(150);
